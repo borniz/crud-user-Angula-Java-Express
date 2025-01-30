@@ -1,0 +1,9 @@
+body{
+    background-image: url("../Assents/17973908.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.bg-body-tertiary{
+    background-color: transparent;
+}

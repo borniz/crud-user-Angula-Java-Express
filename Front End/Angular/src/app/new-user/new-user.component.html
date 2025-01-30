@@ -1,0 +1,65 @@
+<button (click)="abrirModal()">Agregar Nuevo Usuario</button>
+
+<div class="modal" [ngClass]="{ 'is-active': modalAbierto }">
+  <div class="modal-background" (click)="cerrarModal()"></div>
+  <div class="modal-content">
+    <div class="box">
+      <h2>Nuevo Usuario</h2>
+      <form (ngSubmit)="guardarUsuario()">
+        <div class="field">
+          <label class="label">Nombre</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              [(ngModel)]="usuario.nombre"
+              name="nombre"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Correo</label>
+          <div class="control">
+            <input
+              class="input"
+              type="email"
+              [(ngModel)]="usuario.correo"
+              name="correo"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Edad</label>
+          <div class="control">
+            <input
+              class="input"
+              type="number"
+              [(ngModel)]="usuario.edad"
+              name="edad"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button class="button is-primary" type="submit">Guardar</button>
+            <button
+              class="button is-light"
+              type="button"
+              (click)="cerrarModal()"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="cerrarModal()"
+  ></button>
+</div>

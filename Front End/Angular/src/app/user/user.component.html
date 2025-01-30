@@ -1,0 +1,91 @@
+<div class="containerpriuser">
+  <div class="containerUser">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let user of users"
+          (mouseenter)="hoverRow = user.id"
+          (mouseleave)="hoverRow = undefined"
+        >
+          <td>{{ user.id }}</td>
+          <td>{{ user.nombre }}</td>
+          <td>{{ user.correo }}</td>
+          <td>
+            <button *ngIf="hoverRow === user.id" (click)="editarUsuario(user)">
+              <i class="fa fa-pencil"></i> Editar
+            </button>
+            <button
+              *ngIf="hoverRow === user.id"
+              (click)="eliminarUsuario(user.id)"
+            >
+              <i class="fa fa-trash"></i> Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Formulario de edición -->
+  <div *ngIf="userToEdit" class="edit-form">
+    <h2>Editar Usuario</h2>
+    <form (ngSubmit)="actualizarUsuario()">
+      <div class="field">
+        <label class="label">Nombre</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            [(ngModel)]="userToEdit.nombre"
+            name="nombre"
+            required
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Correo</label>
+        <div class="control">
+          <input
+            class="input"
+            type="email"
+            [(ngModel)]="userToEdit.correo"
+            name="correo"
+            required
+          />
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Edad</label>
+        <div class="control">
+          <input
+            class="input"
+            type="number"
+            [(ngModel)]="userToEdit.edad"
+            name="edad"
+            required
+          />
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-primary" type="submit">Actualizar</button>
+          <button
+            class="button is-light"
+            type="button"
+            (click)="userToEdit = null"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

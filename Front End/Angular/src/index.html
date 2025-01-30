@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <meta charset="utf-8" />
+    <title>Angular</title>
+    <base href="/" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://lerprevencion.co/wp-content/uploads/2023/02/logo-web_Mesa-de-trabajo-1.png"
+            height="103"
+            width="266"
+          />
+        </a>
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"
+          >Pagina Principal</a
+        >
+        <a [routerLink]="['/data']" routerLinkActive="router-link-active"
+          >Usuarios</a
+        >
+        <a [routerLink]="['/about']" routerLinkActive="router-link-active"
+          >Sobre Mi</a
+        >
+      </div>
+    </nav>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
