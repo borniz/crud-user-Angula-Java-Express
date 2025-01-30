@@ -121,6 +121,7 @@ ng serve
 La aplicación se ejecutará en http://localhost:4200.
 
 Probar el frontend
+para probar el boton de eliminar o modificar solo es pasar el cursos por la fila a eliminar o modificar
 La aplicación de Angular se conectará automáticamente al backend en http://localhost:8080.
 Podrás:
 Ver la lista de usuarios.
